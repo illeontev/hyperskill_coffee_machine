@@ -1,19 +1,18 @@
-WATER_FOR_ESPRESSO = 250
-MILK_FOR_ESPRESSO = 0
-COFFEE_FOR_ESPRESSO = 16
-COST_OF_ESPRESSO = 4
-
-WATER_FOR_LATTE = 350
-MILK_FOR_LATTE = 75
-COFFEE_FOR_LATTE = 20
-COST_OF_LATTE = 7
-
-WATER_FOR_CAPUCCINO = 200
-MILK_FOR_CAPUCCINO = 100
-COFFEE_FOR_CAPUCCINO = 12
-COST_OF_CAPUCCINO = 6
-
 class CoffeeMachine:
+    WATER_FOR_ESPRESSO = 250
+    MILK_FOR_ESPRESSO = 0
+    COFFEE_FOR_ESPRESSO = 16
+    COST_OF_ESPRESSO = 4
+
+    WATER_FOR_LATTE = 350
+    MILK_FOR_LATTE = 75
+    COFFEE_FOR_LATTE = 20
+    COST_OF_LATTE = 7
+
+    WATER_FOR_CAPUCCINO = 200
+    MILK_FOR_CAPUCCINO = 100
+    COFFEE_FOR_CAPUCCINO = 12
+    COST_OF_CAPUCCINO = 6
 
     def __init__(self, water, milk, coffee, cups, money):
         self.water_left = water
@@ -76,13 +75,13 @@ class CoffeeMachine:
         print(f"${self.money_left} of money")
 
     def make_capuccino(self):
-        if self.water_left < WATER_FOR_CAPUCCINO:
+        if self.water_left < CoffeeMachine.WATER_FOR_CAPUCCINO:
             print("Sorry, not enough water!")
             return
-        if self.milk_left < MILK_FOR_CAPUCCINO:
+        if self.milk_left < CoffeeMachine.MILK_FOR_CAPUCCINO:
             print("Sorry, not enough milk!")
             return
-        if self.coffee_left < COFFEE_FOR_CAPUCCINO:
+        if self.coffee_left < CoffeeMachine.COFFEE_FOR_CAPUCCINO:
             print("Sorry, not enough coffee!")
             return
         if self.cups_left < 1:
@@ -91,20 +90,20 @@ class CoffeeMachine:
 
         print("I have enough resources, making you a coffee!")
 
-        self.water_left -= WATER_FOR_CAPUCCINO
-        self.milk_left -= MILK_FOR_CAPUCCINO
-        self.coffee_left -= COFFEE_FOR_CAPUCCINO
+        self.water_left -= CoffeeMachine.WATER_FOR_CAPUCCINO
+        self.milk_left -= CoffeeMachine.MILK_FOR_CAPUCCINO
+        self.coffee_left -= CoffeeMachine.COFFEE_FOR_CAPUCCINO
         self.cups_left -= 1
-        self.money_left += COST_OF_CAPUCCINO
+        self.money_left += CoffeeMachine.COST_OF_CAPUCCINO
 
     def make_latte(self):
-        if self.water_left < WATER_FOR_LATTE:
+        if self.water_left < CoffeeMachine.ATER_FOR_LATTE:
             print("Sorry, not enough water!")
             return
-        if self.milk_left < MILK_FOR_LATTE:
+        if self.milk_left < CoffeeMachine.MILK_FOR_LATTE:
             print("Sorry, not enough milk!")
             return
-        if self.coffee_left < COFFEE_FOR_LATTE:
+        if self.coffee_left < CoffeeMachine.COFFEE_FOR_LATTE:
             print("Sorry, not enough coffee!")
             return
         if self.cups_left < 1:
@@ -113,20 +112,20 @@ class CoffeeMachine:
 
         print("I have enough resources, making you a coffee!")
 
-        self.water_left -= WATER_FOR_LATTE
-        self.milk_left -= MILK_FOR_LATTE
-        self.coffee_left -= COFFEE_FOR_LATTE
+        self.water_left -= CoffeeMachine.WATER_FOR_LATTE
+        self.milk_left -= CoffeeMachine.MILK_FOR_LATTE
+        self.coffee_left -= CoffeeMachine.COFFEE_FOR_LATTE
         self.cups_left -= 1
-        self.money_left += COST_OF_LATTE
+        self.money_left += CoffeeMachine.COST_OF_LATTE
 
     def make_espresso(self):
-        if self.water_left < WATER_FOR_ESPRESSO:
+        if self.water_left < CoffeeMachine.WATER_FOR_ESPRESSO:
             print("Sorry, not enough water!")
             return
-        if self.milk_left < MILK_FOR_ESPRESSO:
+        if self.milk_left < CoffeeMachine.MILK_FOR_ESPRESSO:
             print("Sorry, not enough milk!")
             return
-        if self.coffee_left < COFFEE_FOR_ESPRESSO:
+        if self.coffee_left < CoffeeMachine.COFFEE_FOR_ESPRESSO:
             print("Sorry, not enough coffee!")
             return
         if self.cups_left < 1:
@@ -135,11 +134,11 @@ class CoffeeMachine:
 
         print("I have enough resources, making you a coffee!")
 
-        self.water_left -= WATER_FOR_ESPRESSO
-        self.milk_left -= MILK_FOR_ESPRESSO
-        self.coffee_left -= COFFEE_FOR_ESPRESSO
+        self.water_left -= CoffeeMachine.WATER_FOR_ESPRESSO
+        self.milk_left -= CoffeeMachine.MILK_FOR_ESPRESSO
+        self.coffee_left -= CoffeeMachine.COFFEE_FOR_ESPRESSO
         self.cups_left -= 1
-        self.money_left += COST_OF_ESPRESSO
+        self.money_left += CoffeeMachine.COST_OF_ESPRESSO
 
     def buy_coffee(self, type_of_drink):
         if type_of_drink == 1:
@@ -158,6 +157,3 @@ while True:
     machine = CoffeeMachine(400, 540, 120, 9, 550)
     while True:
         machine.get_command(input())
-
-
-
